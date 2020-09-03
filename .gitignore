@@ -4,6 +4,7 @@ venv/
 __pycache__/
 flaskr/__pycache__/__init__*
 instance/
+.idea/
 
 .pytest_cache/
 .coverage

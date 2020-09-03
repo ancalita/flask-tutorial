@@ -19,7 +19,7 @@ def create_app(test_config=None):
     )
     
     if test_config is None:
-        app.config.from_pyfile('config.py',silent=True)
+        app.config.from_pyfile('config.py', silent=True)
     else:
         app.config.from_mapping(test_config)
     
@@ -43,8 +43,3 @@ def create_app(test_config=None):
     app.add_url_rule('/', endpoint='index')
     
     return app
-
-    
-    return app
-
-     
