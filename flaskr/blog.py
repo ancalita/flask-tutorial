@@ -29,7 +29,7 @@ def create():
         if error is not None:
             flash(error)
         else:
-            post = Post(title=title, body=body, author_id=g.user['user_id'])
+            post = Post(title=title, body=body, author_id=g.user.user_id)
             db.session.add(post)
             db.session.commit()
             return redirect(url_for('blog.index'))

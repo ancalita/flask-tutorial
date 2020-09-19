@@ -27,9 +27,10 @@ class Post(db.Model):
     body = db.Column(db.String(), nullable=False)
     created = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
 
-    def __init__(self, title, body):
+    def __init__(self, title, body, author_id):
         self.title = title
         self.body = body
+        self.author_id = author_id
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
