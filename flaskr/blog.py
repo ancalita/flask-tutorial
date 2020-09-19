@@ -12,7 +12,7 @@ bp = Blueprint('blog', __name__)
 
 @bp.route('/')
 def index():
-    posts = User.query.join(Post, User.user_id == Post.author_id).order_by(desc(Post.created))
+    posts = Post.query.join(User,  Post.author_id == User.user_id ).order_by(desc(Post.created))
     return render_template('blog/index.html', posts=posts)
 
 @bp.route('/create', methods = ('GET', 'POST'))
